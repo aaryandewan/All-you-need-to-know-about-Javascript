@@ -13,3 +13,15 @@ console.log(value); //logs undefined
 let value = null;
 console.log(value); //logs null
 ```
+
+<h1>Different datatypes in Javascript</h1>
+- number
+- bigint
+- string
+- null
+- undefined
+- boolean
+- symbol
+- Object (only this is non primitive, all others are primitive)
+
+(primitive: a number can store a number. a string can store a string. So they are primitives. An Object however can store various kinds of data so it is a non primitive)
