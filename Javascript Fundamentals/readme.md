@@ -15,6 +15,9 @@ console.log(value); //logs null
 ```
 
 <h1>Different datatypes in Javascript</h1>
+<ul>
+  <li>qwe</li>
+  </ul>
 - number
 - bigint
 - string
