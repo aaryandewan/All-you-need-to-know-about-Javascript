@@ -7,5 +7,7 @@ null literall means nothing i.e the value of that variable is nothing. undefined
 > let value;
 > console.log(value); //logs undefined
 
->let value = null;
->console.log(value); //logs null
+```
+let value = null;
+console.log(value); //logs null
+```
