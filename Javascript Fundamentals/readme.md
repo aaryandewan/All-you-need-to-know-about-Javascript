@@ -77,6 +77,16 @@ Boolean(" "); //true (same reason as above)
 Boolean(""); // false (empty string, should be false!)
 ```
 
+# Mathematical Operators
+Okay so first of all we must know what is an operator and an operand. In the expression `2 + 3`, 2 and 3 are operands and `+` is an operator. 
+Operators can be binary or unary. 
+*Binary operators*: as in the above example. It's an operator which operatos on two operands. 
+*Unary operators*: Operators which operator only on one operand. Like `++`, `--` etc.
+
+## String concatenation with binary operator +
+This is where things get interesting. 
+
+
 
 
 
