@@ -36,7 +36,7 @@ Let's say you have a variable called `name` and you want to see what it's type i
 let name = "aaryan";
 console.log(typeof name); // string
 ```
-
+### Numerical Conversions
 Now what if we want to convert a String to a Number? or vice versa? or to a Boolean? 
 There are several ways to do this, the easiest one being: 
 ```
@@ -64,6 +64,19 @@ The following table tells you what happens when you try to convert something int
 | `null` | `0` |
 | `true and false` | `1` and `0` |
 | `string` | Whitespaces (includes spaces, tabs \t, newlines \n etc.) from the start and end are removed. If the remaining string is empty, the result is `0`. Otherwise, the number is “read” from the string. An error gives NaN. |
+
+### Boolean Conversions
+This one is pretty intuitive. 
+```
+Boolean(null); // false
+Boolean(undefined); //false
+Boolean(123); //true
+Boolean(0); // false
+Boolean("0"); //true (because any non empty string is translated to true!)
+Boolean(" "); //true (same reason as above)
+Boolean(""); // false (empty string, should be false!)
+```
+
 
 
 
