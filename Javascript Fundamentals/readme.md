@@ -186,5 +186,23 @@ console.log(false === 0); false
 ## Comparison with null and undefined
 This is a little tricky.
 
+## Comparison with null and undefined
+This is a little tricky. There are two answers to "what happens when you try to comapare stuff with null and undefined? "
+    
+#### For a strict check
+```
+console.log(undefined === null); //false
+```
+    
+#### For a non strict check
+They are equal to **only** each other and no one else
+```
+console.log(undefined == null); //true;
+console.log(null == false);// false
+console.log(null = ""); //false
+```
 
 
+    
+    
+    
