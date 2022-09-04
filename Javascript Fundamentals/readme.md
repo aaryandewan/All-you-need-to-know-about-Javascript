@@ -375,10 +375,6 @@ A common problem/doubt that I had was when to use `(` and `{` in the function. T
 
 ```
 let square1 = num => (num * num); //works fine
-let square2 = num => {num * num}; // gives an error as expected.
+let square2 = num => {num * num}; // gives an error as expected as { doesn't mean that it will return that value, you have to put that return statement.
 let square3 = num => {return num * num}; // works fine
 ```
-
-    
-
-
