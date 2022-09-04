@@ -223,6 +223,40 @@ alert( undefined == 0 ); // false (3)
 ```
 
 
+# Logical Operators
+Trust me, this is not what it is like in C++/C/Java. 
+There are 4 types of operators. 
+&&(AND)
+||(OR)
+!(NOT)
+&&(Nullish coalescing)
+
+Their result unlike other languages can be of *any* type, not necessarily boolean.
+
+## The OR Operator ||
+In classical programming, the logical OR is meant to manipulate boolean values only. If any of its arguments are true, it returns true, otherwise it returns false.
+
+In Javascript, **the OR operator finds the first truthy value**
+> `result = value1 || value2 || value3;`
+
+The OR || operator does the following:
+Evaluates operands from left to right.
+For each operand, converts it to boolean. If the result is true, stops and returns the **original value of that operand** (NOT the boolean value of that operand).
+If all operands have been evaluated (i.e. all were false), returns the last operand.
+
+**In other words, a chain of OR || returns the first truthy value or the last one if no truthy value is found.**
+
+##### Example
+A Classic example is to get the first truthy value in a list of values:
+```
+let firstName = "";
+let lastName = "";
+let nickName = "SuperCoder";
+
+alert( firstName || lastName || nickName || "Anonymous"); // SuperCoder
+```
+
+
 
 
 
@@ -230,3 +264,4 @@ alert( undefined == 0 ); // false (3)
     
     
     
+
