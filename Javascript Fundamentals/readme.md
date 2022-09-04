@@ -256,7 +256,22 @@ let nickName = "SuperCoder";
 alert( firstName || lastName || nickName || "Anonymous"); // SuperCoder
 ```
 
+## AND Operator &&
+Exactly opposite to the OR operator. **It returns the first falsy value**.
 
+> `result = value1 && value2 && value3;`
+
+The AND && operator does the following:
+
+Evaluates operands from left to right.
+For each operand, converts it to a boolean. If the result is false, stops and returns the original value of that operand (**NOT THE BOOLEAN VALUE OF THAT OPERAND**).
+If all operands have been evaluated (i.e. all were truthy), returns the last operand.
+
+**In other words, AND returns the first falsy value or the last value if none were found.**
+
+## NOT Operaotor !
+Converts the operand to its boolean value. You can use the NOT operator twice to convert anything to its Boolean value. 
+`!!3` // true;
 
 
 
