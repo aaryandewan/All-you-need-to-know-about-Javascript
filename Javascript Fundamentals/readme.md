@@ -202,6 +202,30 @@ console.log(null == false);// false
 console.log(null = ""); //false
 ```
 
+For mathematical comparisons, `null` gets converted to 0 and `undefined` gets converted to `NaN`
+
+Check out this weird result: 
+```
+alert( null > 0 );  // (1) false
+alert( null == 0 ); // (2) false
+alert( null >= 0 ); // (3) true
+``` 
+First of all, as we learned that `null` gets converted int 0 when dealing with mathematical comparisons. 
+In Line 1, 0 > 0 should give us false! (OK)
+In Line 2, as per the rule defined above that "`null` and `undefined` are equal to **only** each other and no one else", we should get a flase (OK)
+In Line 3, 0 >= 0 which is true and that's what we get! (OK!!!!)
+
+And of course, if you try any of the above stuff with `undefined` you will always get a `false` as it gets converted to a `NaN`.
+```
+alert( undefined > 0 ); // false (1)
+alert( undefined < 0 ); // false (2)
+alert( undefined == 0 ); // false (3)
+```
+
+
+
+
+
 
     
     
