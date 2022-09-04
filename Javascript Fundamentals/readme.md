@@ -85,6 +85,65 @@ Operators can be binary or unary.
 
 ## String concatenation with binary operator +
 This is where things get interesting. 
+If the binary + operator is used between two strings, it concatenates them. 
+```
+let result = "2" + "3";
+console.log(result); // "5"
+```
+
+We learned above that this does **NOT** happen if you use any other operator like `*` or `/` etc. 
+```
+let result = "10" / "5";
+console.log(result); // 2
+```
+
+> Only + operator concatenates the strings (and not addds the numbers represented) but all other operators will perform mathematical operations on the string 
+
+Also, if one of the operands is not a string, it gets converted into one:
+```
+console.log(32 + "  4"); //"32  4"
+console.log(2 + 2 + '1');// '41' as the compiler reads the whole thing from left to right
+```
+
+## Unary + operator
+It does numeric conversion i.e it does the same thing as `Number(...)`
+So if it is applied to any `Number`, it doesn't do anything but if it is applied to any other data type, it converts it into a `Number`. 
+```
+let apples = "2";
+let oranges = "3";
+alert( apples + oranges ); // "23", the binary plus concatenates strings
+alert( +apples + +oranges ); // 5
+alert( Number(apples) + Number(oranges) ); // 5 (same as above, but longer)
+```
+
+## Assignment operator
+Now this is really cool. I've been coding all my college life but somehow I didn't really realise this fact that the `=` is an operator **AND** it returns _something_.
+
+`name = "aaryan"` writes "aaryan" into `name` and then returns "aaryan"!
+
+```
+let a = 1;
+let b = 2;
+
+let c = 3 - (a = b + 1); (c = 3 - (3)) ===> c = 0;
+
+alert( a ); // 3
+alert( c ); // 0
+```
+
+You can chain assignments like: 
+```
+let a, b, c;
+
+a = b = c = 2 + 2;
+
+alert( a ); // 4
+alert( b ); // 4
+alert( c ); // 4
+```
+
+
+
 
 
 
