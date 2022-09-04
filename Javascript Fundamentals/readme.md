@@ -273,10 +273,32 @@ If all operands have been evaluated (i.e. all were truthy), returns the last ope
 Converts the operand to its boolean value. You can use the NOT operator twice to convert anything to its Boolean value. 
 `!!3` // true;
 
+## Nullish Coalescing Operator &&
+This is a new addition to the JS language. A value is defined when it is neither `null` nor `undefined`. 
 
+**?? returns the first argument if it’s not null/undefined. Otherwise, the second one.**
+Example: 
+```
+let user1;
+let user2 = "Aaryan";
+alert(user1 ?? "Anonymous"); // Anonymous (user1 not defined)
+alert(user2 ?? "Anonymous"); // Aaryan as user 2 is defined
+```
+So, we can also use a sequence of ?? to select the first value from a list that isn’t null/undefined.
 
+#### Difference between ?? and || 
+|| returns the first truthy value
+?? returns the first defined value
 
-    
-    
-    
+In other words, || doesn’t distinguish between false, 0, an empty string "" and null/undefined. They are all the same – falsy values. If any of these is the first argument of ||, then we’ll get the second argument as the result.
+
+Consider this example:
+```
+let height = 0;
+
+alert(height || 100); // 100
+alert(height ?? 100); // 0
+```
+
+In the above case, it might have happened that the `height` was actually meant to be 0 but there's a bug that's crept in which is making our `height = 100` in the first line.  
 
