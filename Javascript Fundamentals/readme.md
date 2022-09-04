@@ -151,9 +151,40 @@ let a = (1 + 2, 3 + 4);
 alert( a ); // 7 (the result of 3 + 4)
 ```
 
+# JavaScript Comparisons
+When strings are compared in JS, they are compared lexicographically. 
+1. Compare the first character of both strings.
+2 .If the first character from the first string is greater (or less) than the other string’s, then the first string is greater (or less) than the second. We’re done.
+3. Otherwise, if both strings’ first characters are the same, compare the second characters the same way.
+4. Repeat until the end of either string.
+5. If both strings end at the same length, then they are equal. Otherwise, the longer string is greater.
 
+## Comparisons of different types 
+Whenever you compare something with a number, JS convertes that thing to a Number itself and them compares them. 
 
+```
+alert( '2' > 1 ); // true, string '2' becomes a number 2
+alert( '01' == 1 ); // true, string '01' becomes a number 1
+alert( true == 1 ); // true
+alert( false == 0 ); // true
+```
 
+Now this might seem weird but its totally normal:
+```
+let a = "0";
+let b = 0;
+console.log(a == b);// true even if you tried to convert them to their respective booleans, you'd get different answers!
+```
+
+But sometimes, you REALLY need to check id two things are REALLY equal. You can use the strict equality check `===`. This does not perform type conversion before comparing two strings. 
+```
+console.log(false == 0); //true
+console.log(false == '0'); //true
+console.log(false === 0); false
+```
+
+## Comparison with null and undefined
+This is a little tricky.
 
 
 
