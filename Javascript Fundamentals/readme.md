@@ -302,3 +302,83 @@ alert(height ?? 100); // 0
 
 In the above case, it might have happened that the `height` was actually meant to be 0 but there's a bug that's crept in which is making our `height = 100` in the first line.  
 
+# Javascript functions
+Big daddy topic right over here. Kinda like the beginning of JS. 
+
+To read the basics, go over here: https://javascript.info/function-basics
+
+The most important line that you need to keep in your mind at all times when you're dealing with functions is that **a function is a value**. If you do `let a = 123`, then `a` variable has a value 123. Similarly, a function is a value, which can be passed around in other functions and we can do almost everything with it that we can do with normal values. 
+
+There are two ways to define a function. 
+1) Function Declaration
+```
+function sayHi() {
+  alert( "Hello" );
+}
+```
+
+2) Function expression
+```
+let sayHi = function() {
+  alert( "Hello" );
+};
+```
+1 is trivial. In 2, you are making a function and then storing that function in a variable called `sayHi`. `sayHi` is a variable. It's not the function. The function is stored in that variable. To call the function, you need to append `()` to the end of the variable itself to call the function which it is holding. 
+You can even console log the function and it will show you the entire function!
+
+## Callback Functions
+These are functions which you pass onto other functions as parameters. 
+The simplest example can be:
+```
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "You agreed." );
+}
+
+function showCancel() {
+  alert( "You canceled the execution." );
+}
+
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel);
+```
+
+You can make it even smaller by using _Anonymous Functions_. 
+```
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+```
+
+## Important difference between Function Declarations and Function Expressions
+**A Function Expression is created when the execution reaches it and is usable only from that moment.**
+**A Function Declaration can be called earlier than it is defined.**
+**In strict mode, when a Function Declaration is within a code block, it’s visible everywhere inside that block. But not outside of it**
+
+
+# Arrow Functions
+They're basically syntax sugar. 
+Read the basics here: https://javascript.info/arrow-functions-basics
+
+A common problem/doubt that I had was when to use `(` and `{` in the function. Turns out that you use '(' if you want to return something from the function and you use `{` if you want a multiline function. 
+
+```
+let square1 = num => (num * num); //works fine
+let square2 = num => {num * num}; // gives an error as expected.
+let square3 = num => {return num * num}; // works fine
+```
+
+    
+
+
