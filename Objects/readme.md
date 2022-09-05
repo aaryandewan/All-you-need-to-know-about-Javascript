@@ -62,7 +62,7 @@ When you run the above script, you get:
 
 So when you're making an object and you are thinking whether to use `[variable]` or `variable` as the key value in the object, just remember that when you use `variable`, that exact name will act as the key, but if you use `[variable]` then whatever is stored inside that `variable` will be made the key!
 
-#### Property name limitations
+### Property name limitations
 A variable cannot have a name equal to one of the language-reserved words like “for”, “let”, “return” etc.
 
 But for an object property, there’s no such restriction:
