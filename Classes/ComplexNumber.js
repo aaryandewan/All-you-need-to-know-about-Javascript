@@ -58,7 +58,7 @@ let RANDOM = new ComplexNumber(5, 6);
 
 let s = ONE.plus(RANDOM);
 
-////////////////////////////////////////////////////////////////
+//////////////////////////////////////////
 
 let xx = ComplexNumber.addTwoComplexNumbers(ONE, RANDOM);
 console.log(xx.imaginary);
