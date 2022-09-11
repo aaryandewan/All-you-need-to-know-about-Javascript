@@ -79,6 +79,89 @@ let objCopy = { ...obj };
 ```
 
 
+# Closure
+An important thing to rememebr is that a variable declared inside a code block `{...}` is only visible inside that code block. 
+
+To understanc closures, check out this example: 
+
+```
+function makeCounter() {
+  let count = 0;
+
+  return function() {
+    return count++;
+  };
+}
+
+let counter = makeCounter();
+
+alert( counter() ); // 0
+alert( counter() ); // 1
+alert( counter() ); // 2
+```
+
+
+## Lexical Environment
+Every function, every code block, eveything! has a lexical scope in JS. A lexical scope consists of two parts: 
+1) Environment Record: an object that stores all local variables as its properties (and some other information like the value of this).
+
+2) A reference to the outer lexical environment, the one associated with the outer code.
+
+
+**A “variable” is just a property of the special internal object, Environment Record. “To get or change a variable” means “to get or change a property of that object”.**
+
+So when we search for a variable, the inner Lexical Environment is searched first, then the outer one, then the more outer one and so on until the global one.
+
+
+To really understand them, go here: https://javascript.info/closure
+
+
+# SetTimeout
+It simply runs the function which you passed after a particular amount of time has lapsed. 
+```
+setTimeout(() => alert('Hello'), 1000);
+```
+
+### Cancelling with clearTimeout
+```
+let timerId = setTimeout(() => alert("never happens"), 1000);
+alert(timerId); // timer identifier
+
+clearTimeout(timerId);
+alert(timerId); // same identifier (doesn't become null after canceling)
+```
+
+# SetInterval
+It runs after the time has lapsed. Then runs again and again. Not like `SetTimeout` which only runs once. 
+
+You can make a SetInterval by nesting two SetTimeouts:
+```
+let timerId = setTimeout(function tick() {
+  alert('tick');
+  timerId = setTimeout(tick, 2000); // (*)
+}, 2000);
+```
+
+There's an important difference between `setInterval` and nested `setTimeout`s. 
+https://javascript.info/settimeout-setinterval#nested-settimeout
+
+### Zero Delay SetTimeout
+There’s a special use case: setTimeout(func, 0), or just setTimeout(func).
+
+This schedules the execution of func as soon as possible. But the scheduler will invoke it only after the currently executing script is complete.
+
+Example: 
+```
+setTimeout(() => alert("World"));
+
+alert("Hello");
+```
+This will alert `Hello World` not the opposite. 
+
+
+
+
+
 
 
 
